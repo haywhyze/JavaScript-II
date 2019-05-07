@@ -1,7 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function outer(x) {
+  let y = 10;
 
+  function inner() {
+    let z = 20;
+    return (z + y / x)
+  }
+  return inner()
+}
+const random = outer(5);
+console.log(random);
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
