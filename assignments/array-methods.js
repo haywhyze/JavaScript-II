@@ -78,11 +78,20 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-// Get the total number of runners that donated above 200
+// The organisers would like to appreciate runners with donations over 200 with VIP treatment. 
+// Get the runners with donations over 200
 let donationsOver200 = runners.filter(element => element.donation > 200);
+console.log(donationsOver200);
+
+// Problem 2
+// Get the total addition of all donations over 200
 let totalDonationsOver200 = donationsOver200.reduce((acc, element) => acc + element.donation, 0);
 console.log(totalDonationsOver200);
 
-// Problem 2
-
 // Problem 3
+// Get the details of the runner(s) with the highest donation
+let highest = 0;
+runners.forEach(element => {
+    element.donation > highest ? highest = element.donation : null;
+});
+console.log(runners.filter(element => element.donation === highest));
